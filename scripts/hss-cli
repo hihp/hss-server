@@ -730,7 +730,7 @@ def do_update_all(name, config):
 
     cont = input("Updating ALL skills. Continue? (YES|no) ")
 
-    if cont and cont is not "YES" and cont is not "yes":
+    if cont and cont != "YES" and cont != "yes":
         return
 
     for filename in os.listdir(skills_directory):
