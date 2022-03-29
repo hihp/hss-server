@@ -81,7 +81,7 @@ def parseArgs():
 
         if arg.startswith("--") or arg.startswith("-"):
             if i+1 < len(sys.argv) and not sys.argv[i+1].startswith("-"):
-                res[arg.replace("-", "")] = sys.argv[i+1]
+                res[arg.replace("-", "", 2)] = sys.argv[i+1]
             else:
                 res[arg.replace("-", "")] = None
 
@@ -121,6 +121,9 @@ def help():
     print("\n   --register                           Registers a new account at the HSS registry.")
     print("   --unregister                         Deletes an existing account from the HSS registry. Will also delete all associated skills.")
 
+    print("\ngeneral:")
+    print("\n   --config-dir   Specify path to hss-server config dir")
+    
     print("\nHelp:")
     print("\n   -h, --help      Show this help and exit")
     print("   -v, --version   Show version and exit")
